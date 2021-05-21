@@ -1,0 +1,19 @@
+POST {{url}}/login
+Content-Type: application/json
+
+{
+    "username": "asdf",
+    "password": "asdf"
+}
+
+### Send POST request with json body
+POST {{url}}/login
+Content-Type: application/json
+
+{
+    "username": "robertosimonsen",
+    "password": "senai_101"
+}
+
+
+

@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/login', 'AuthController@login');
+
+Route::get('/unauthorized', 'AuthController@unauthorized')->name('unauthorized');
+Route::get('/forbidden', 'AuthController@forbidden')->name('forbidden');
+
+Route::middleware('auth:api')->group(function() {
+
+    Route::delete('/logout', 'AuthController@logout');
+
 });

@@ -1,0 +1,9 @@
+DELETE {{url}}/logout
+Authorization: Bearer {{token}}
+
+### test
+
+GET {{url}}/unauthorized
+
+
+
