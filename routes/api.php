@@ -20,6 +20,9 @@ Route::get('/forbidden', 'AuthController@forbidden')->name('forbidden');
 
 Route::middleware('auth:api')->group(function() {
 
+    Route::get('/{resource}', 'ResourceController@index')->where('resource', 'motherboards|processors|ram-memories|storage-devices|graphic-cards|power-supplies|machines|brands');;
+    Route::get('/search/{resource}', 'ResourceController@index')->where('resource', 'motherboards|processors|ram-memories|storage-devices|graphic-cards|power-supplies|machines|brands');;
+
     Route::delete('/logout', 'AuthController@logout');
 
 });

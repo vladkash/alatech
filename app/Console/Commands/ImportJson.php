@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\User;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
 class ImportJson extends Command
 {
@@ -38,10 +39,10 @@ class ImportJson extends Command
      */
     public function handle()
     {
-        $data = json_decode(file_get_contents(base_path('media_m4/users.json')), true);
+        $data = json_decode(file_get_contents(base_path('media_m4/ramMemories.json')), true);
 
         foreach ($data as $row) {
-            User::query()->create($row);
+            DB::table('ramMemory')->insert($row);
         }
 
         $this->info('OK!');

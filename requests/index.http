@@ -1,0 +1,6 @@
+GET {{url}}/ram-memories?pageSize=5&page=1
+Authorization: Bearer {{token}}
+
+###
+GET {{url}}/search/brands?pageSize=5&page=1
+Authorization: Bearer {{token}}
